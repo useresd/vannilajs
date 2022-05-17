@@ -1,0 +1,14 @@
+[
+    {
+        "department": "ادارة المبيعات",
+        "description": "فاتورة مبيعات",
+        "code": "INV",
+        "href": "/forms/retarder.pdf"
+    },
+    {
+        "department": "ادارة المبيعات",
+        "description": "امر بيع",
+        "code": "SO",
+        "href": "/forms/retarder.pdf"
+    }
+]
