@@ -1,0 +1,92 @@
+<%- include("partials/header") %>
+
+<div class="container mt-4">
+    <form action="/upload" method="post" enctype="multipart/form-data">
+
+        <div class="row mb-4">
+            <div class="col">
+                <h1>إضافة نموزج جديد</h1>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">
+                <label class="form-label">اسم النموزج</label>
+                <input type="text" class="form-control" name="description">
+                <div class="invalid-feedback"></div>              
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">
+                <label for="name" class="form-label">الإدارة</label>
+                <select class="form-select" name="department">
+                    <option selected value="">اختار الإدارة</option>
+                </select>
+                <div class="invalid-feedback"></div> 
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">
+                <label for="code" class="form-label">رمز النموزج</label>
+                <input type="text" class="form-control" id="code" name="code">
+                <div class="invalid-feedback"></div> 
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">
+                <label for="file" class="form-label">تحميل النموزج</label>
+                <input class="form-control" type="file" id="file" name="file">
+            </div>
+        </div>
+        <div class="mt-3">
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="submit">تحميل</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+
+    onCreated();
+
+    function onCreated() {
+        createDepartmentOptions();
+        validateErrors();
+    }
+
+    // Create Departments Options
+    function createDepartmentOptions() {
+        let departments = JSON.parse(`<%- departments %>`);
+        let select = document.querySelector("select[name='department']");
+        departments.forEach(function(department) {
+            select.appendChild(createOption(department.name, department.name));
+        });
+    }
+
+    // Create an options for a select elements
+    function createOption(value, text) {
+        let option = document.createElement("option");
+        option.setAttribute("value", value);
+        option.innerText = text;
+        return option;
+    }
+
+    // validate errors from server and populate the errors messages
+    function validateErrors() {
+        let errors = JSON.parse(`<%- errors %>`);
+        Object.keys(errors).forEach(function(key) {
+            let element = document.querySelector(`[name='${key}']`)
+            if(element) {
+                element.nextElementSibling.innerHTML = errors[key]
+                element.classList.add('is-invalid')
+            }
+        });
+    }
+
+</script>
+
+<%- include("partials/footer") %> 

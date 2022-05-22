@@ -1,14 +1,1 @@
-[
-    {
-        "department": "ادارة المبيعات",
-        "description": "فاتورة مبيعات",
-        "code": "INV",
-        "href": "/forms/retarder.pdf"
-    },
-    {
-        "department": "ادارة المبيعات",
-        "description": "امر بيع",
-        "code": "SO",
-        "href": "/forms/retarder.pdf"
-    }
-]
+[{"department":"ادارة المبيعات","description":"فاتورة مبيعات","code":"INV","href":"/forms/retarder.pdf"},{"department":"ادارة المبيعات","description":"امر بيع","code":"SO","href":"/forms/retarder.pdf"},{"department":"ادارة المبيعات","description":"عرض اسعار","code":"QUOT","href":"/forms/retarder.pdf"},{"department":"الموارد البشرية","description":"طلب حوجة","code":"MF-003","href":"/storage/dbfbe9d3-a80c-4976-a092-33e7f668089b.xlsx"},{"department":"الحسابات","description":"wewe","code":"wewe","href":"/storage/65393186-8d1c-4be3-bc4c-368eb39c5a72.pdf"},{"department":"الموارد البشرية","description":"نموزج اضافة عميل جديد","code":"الموارد البشرية","href":"/storage/e434fc94-9860-443d-ba31-b5cad7fd4a50.png"},{"department":"الحسابات","description":"nkjnkjnkjn","code":"mkmkmkmkm","href":"/storage/d50ca408-f567-4ca4-8243-a99dcdb39b41.png"},{"department":"الموارد البشرية","description":"ddfs fsd sdf sd fsdf sdf sdf sdf sadf asd fa","code":"dsfsdfsdf","href":"/storage/e4bd1e9a-9496-491f-a57a-3d146e44d1b6.png"},{"department":"المبيعات","description":"rjd  hfd hfdg ","code":"sdfs f s","href":"/storage/b62d0fbd-53e3-4c78-9737-1959c174f7aa.png"},{"department":"الموارد البشرية","description":"sdfsdf","code":"sdfsdf","href":"/storage/50552459-58df-4320-8595-ec73b03e1899.png"},{"department":"المشتريات","description":"asd","code":"adsda","href":"/storage/48cd95a0-ae93-4c9f-adc5-cabffc3cc51c.png"},{"department":"المشتريات","description":"Test","code":"Yytbu","href":"/storage/e2942b9a-962b-461f-8cf4-dfc2fb70702a.jpg"},{"department":"الحسابات","description":"عرض اسعار","code":"Qut-2022","href":"/storage/1b8b7453-bd11-44c9-9781-bddb7a7614ae.jpg"},{"department":"الحسابات","description":"عرض اسعار","code":"Qut-2022","href":"/storage/ffbecad2-e6ad-483b-9911-8368a84e3b69.pdf"},{"department":"الموارد البشرية","description":"dfdfd","code":"sdfsdfdsf","href":"/storage/c6d8d79a-7afc-4439-8bab-9b6ee88122b6.png"}]

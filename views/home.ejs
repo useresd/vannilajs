@@ -2,25 +2,25 @@
 
 <div class="container">
     <div class="row py-4">
-        <div class="col">
+        <div class="col-md-6">
             <h1>النمازج الإدارية</h1>
             <p>مصدر لجميع النمازج الإدارية الخاصة بجميع انشطة إدارات الشركة</p>
         </div>
-        <div class="col">
+        <div class="col-md-6">
             <div>
                 <input type="text" class="form-control" placeholder="بحث" id="searchInput">
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col" id="tableWithSpinner">
-            <table class="table" id="formsTable">
+        <div class="col">
+            <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">الإدارة</th>
-                        <th scope="col">وصف النموزج</th>
                         <th scope="col">الرقم</th>
+                        <th scope="col">وصف النموزج</th>
+                        <th scope="col">الإدارة</th>
                         <th scope="col">تحميل</th>
                     </tr>
                 </thead>
@@ -31,49 +31,12 @@
 </div>
 
 <script>
-    var data = [];
-    const formsTable = document.getElementById("formsTable");
-    const tableWithSpinner = document.getElementById("tableWithSpinner");
-    hideTable();
-    
-    function createSpinner() {
-        let spinner = document.createElement("div");
-        spinner.innerHTML = `
-            <div class="d-flex justify-content-center">
-                <div class="spinner-border" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            </div>
-        `;
-        return spinner;
-    }
+    var mydata = `<%- data %>`;
+    var data = JSON.parse(mydata);
 
-    const spinner = createSpinner();
-
-    function hideTable() {
-        formsTable.style.display = "none";
-    }
+    renderTable(data)
     
-    function showTable() {
-        formsTable.style.display = "table";
-    }
-    
-    function getForms() {
-        tableWithSpinner.append(spinner);
-        fetch("/api/forms")
-            .then(response => response.json())
-            .then(resp => {
-                tableWithSpinner.removeChild(spinner);
-                data = resp;
-                renderTable(data);
-                showTable();
-            })
-            .catch(error => console.log(error));
-    }
-    getForms();
-
     // Search input
-
     let searchInput = document.getElementById("searchInput");
     
     window.addEventListener("keydown", (e) => {
@@ -106,10 +69,10 @@
             let tr = document.createElement("tr");
             tr.innerHTML = `
                 <th>${index + 1}</th>
-                <td>${item.department}</td>
-                <td>${item.description}</td>
                 <td>${item.code}</td>
-                <td><a href="${item.href}" target="_blank"><i class="fa-solid fa-file-pdf" style="color: red; font-size: 1.2em"></i></a></td>
+                <td>${item.description}</td>
+                <td>${item.department}</td>
+                <td><a href="${item.href}" target="_blank"><i class="fa-solid fa-download" style="font-size: 1.2em"></i></a></td>
             `;
             table.appendChild(tr);
         })

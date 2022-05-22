@@ -1,0 +1,41 @@
+<%- include("partials/header") -%> 
+
+<div class="container">
+    <div class="py-4 row justify-content-center">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col">
+                    <h3>تسجيل الدخول</h3>
+                    <p>للمتابعة يجب ادخال رمز الحماية</p>
+                </div>      
+            </div>
+            <form action="/pin" method="post">
+                <div class="row justify-content-center">
+                    <div class="col mb-4">
+                        <label for="inputPin" class="form-label">رمز الحماية</label>
+                        <input type="password" class="form-control" id="inputPin" name="pin">
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary" type="submit">متابعة</button>
+                        </div>
+                    </div>      
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    if(`<%- locals.errors %>`) {
+        let errors = JSON.parse(`<%- locals.errors %>`)
+        if(Object.keys(errors).includes("pin")) {
+            document.getElementById("inputPin").classList.add("is-invalid")
+            document.getElementById("inputPin").nextElementSibling.innerHTML = errors.pin;
+        }
+    }
+</script>
+<%- include("partials/footer") -%> 

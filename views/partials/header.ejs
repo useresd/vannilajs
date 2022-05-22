@@ -20,3 +20,26 @@
     </style>
 </head>
 <body>
+    <div class="container">
+      <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="/" class="nav-link" aria-current="page">الرئيسية</a></li>
+          <% if(locals.hasPin) { %>
+            <li class="nav-item"><a href="/upload" class="nav-link">اضافة نموزج جديد</a></li>
+            <li class="nav-item"><a href="/logout" class="nav-link">تسجيل الخروج</a></li>
+          <% } else { %>
+            <li class="nav-item"><a href="/pin" class="nav-link">تسجيل الدخول</a></li>
+          <% } %> 
+        </ul>
+      </header>
+    </div>
+
+    <script>
+      let links = document.getElementsByTagName("a");
+      
+      for(let i = 0; i < links.length; i++) {
+        if(window.location.pathname == links[i].getAttribute("href")) {
+          links[i].classList.add("active")
+        }
+      }
+    </script>
